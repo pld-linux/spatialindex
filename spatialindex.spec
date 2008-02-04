@@ -28,7 +28,6 @@ Summary:	Header files for Spatial Index Library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki Spatial Index
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	mh-tools-devel
 
 %description devel
 Header files for Spatial Index Library.
