@@ -1,13 +1,13 @@
 Summary:	Spatial Index Library
 Summary(pl.UTF-8):	Biblioteka Spatial Index
 Name:		spatialindex
-Version:	1.3.0
+Version:	1.3.1
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	http://trac.gispython.org/projects/SpatialIndex/attachment/wiki/Releases/%{name}-%{version}.tar.gz?format=raw
-# Source0-md5:	d7439c5b9cdefb80c73a5a39c7a8dc53
-Patch0:		%{name}-mvtree.patch
+# Source0-md5:	a3742facb01de39d3e88ebe0c85ebf2f
+#Patch0:		%{name}-mvtree.patch
 URL:		http://research.att.com/~marioh/spatialindex/index.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
