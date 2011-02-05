@@ -32,7 +32,7 @@ Requires:	%{name} = %{version}-%{release}
 %description devel
 Header files for Spatial Index Library.
 
-%description devel -l pl
+%description devel -l pl.UTF-8
 Pliki nagłówkowe biblioteki Spatial Index.
 
 %package static
