@@ -1,14 +1,14 @@
 Summary:	Spatial Index Library
 Summary(pl.UTF-8):	Biblioteka Spatial Index
 Name:		spatialindex
-Version:	1.3.1
+Version:	1.8.5
 Release:	1
-License:	GPL
+License:	MIT
 Group:		Libraries
-Source0:	http://trac.gispython.org/projects/SpatialIndex/attachment/wiki/Releases/%{name}-%{version}.tar.gz?format=raw
-# Source0-md5:	a3742facb01de39d3e88ebe0c85ebf2f
+Source0:	http://download.osgeo.org/libspatialindex/%{name}-src-%{version}.tar.bz2
+# Source0-md5:	3303c47fd85aa17e64ef52ebec212762
 #Patch0:		%{name}-mvtree.patch
-URL:		http://research.att.com/~marioh/spatialindex/index.html
+URL:		https://libspatialindex.github.io/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -48,7 +48,7 @@ Static version of Spatial Index Library.
 Statyczna wersja biblioteki Spatial Index.
 
 %prep
-%setup -q
+%setup -q -n %{name}-src-%{version}
 #%patch0 -p0
 
 %build
@@ -61,6 +61,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/lib%{name}*.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -69,15 +71,16 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%doc AUTHORS ChangeLog README
+%attr(755,root,root) %{_libdir}/lib%{name}*.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/lib%{name}*.4
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/lib%{name}*.so
 %{_includedir}/spatialindex
+%{_pkgconfigdir}/lib%{name}.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/lib%{name}*.a
