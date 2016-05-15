@@ -59,6 +59,7 @@ Statyczna wersja biblioteki Spatial Index.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
+	LDFLAGS="-lm" \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/lib%{name}*.la
