@@ -49,7 +49,7 @@ Statyczna wersja biblioteki Spatial Index.
 
 %prep
 %setup -q -n %{name}-src-%{version}
-#%patch0 -p0
+#%%patch0 -p0
 
 %build
 %configure
